@@ -1,48 +1,33 @@
-<section id="footer-container">
+<footer id="footer">
+		<center class="container">
+			Sandford Fleming Building B640<br>
+			10 King's College Road, Toronto, Ontario M5S 3G4<br>647-862-1353<br> 
+			<a href="mailto:ececlub@ecf.utoronto.ca">ececlub@ecf.utoronto.ca</a>
+		</center>
+		<div class="text-muted credit">
+			Designed by: <a
+				href="http://www.linkedin.com/pub/yerusha-nuh/21/b1b/571">Yerusha
+				Nuh</a>
+		</div>
 
-	<ul class="footer-nav-container">
-		<li><a href="https://www.facebook.com/HerVolutionCanadianWomeninSTEM" target="_blank" class="menuItem fa fa-facebook-square fa-2x"></a></li>
-		<li><a href="/aboutus" target="_blank" class="menuItem fa fa-twitter-square fa-2x"></a></li>
-		<li><a href="http://instagram.com/her_volution" target="_blank" class="menuItem fa fa-instagram fa-2x"></a></li>
-		<li><a href="https://plus.google.com/+HErVOLUTIONSTEM/posts" target="_blank" class="menuItem fa fa-google-plus-square fa-2x"></a></li>
-		<li><a href="http://www.pinterest.com/hervolution/" target="_blank" class="menuItem fa fa-pinterest-square fa-2x"></a></li>
-		<li><a href="https://www.youtube.com/channel/UCyTVvixDvpY0WxsfQVrZqgg" target="_blank" class="menuItem fa fa-youtube-square fa-2x"></a></li>
-		<li><a href="mailto:i-wendy@peopleandcode.com" target="_blank" class="menuItem fa fa-envelope fa-2x"></a></li>
-		<li><a href="/glossary" class="glossary-footer">Glossary</a></li>
-		<li><a href="/privacy" class="glossary-footer">Privacy Policy</a></li>
-		<li><a href="/terms" class="glossary-footer">Terms &#38; Conditions</a></li>
-		<li><a href="http://peopleandcode.com/" class="pnc-footer">Website Powered By <span>People and Code<span></a></li>
-	</ul>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//code.jquery.com/jquery.js"></script>
 
-</section>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="<?php echo get_template_directory_uri(); ?>/vendor/jquery.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/vendor/bootstrap.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/vendor/holder.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+</body>
+</html>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
-	<!-- SlidesJS Required: Link to jquery.slides.js -->
-	<script src="<?php echo get_template_directory_uri(); ?>/vendor/jquery.slides.js"></script>
-	<!-- End SlidesJS Required -->
-
-	<!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
-	<script src="<?php echo get_template_directory_uri(); ?>/js/hamburger-icon.js"></script>
-
-	<?php if(is_front_page()){ ?>
-	<script>
-	$(function() {
-		$('#slides').slidesjs({
-			width: 940,
-			height: 528,
-			play: {
-				active: true,
-				auto: true,
-				interval: 4000,
-				swap: true
-			}
-		});
-	});
-	</script>
-	<!-- End SlidesJS Required -->
-	<?php } ?>
 
 	<?php wp_footer(); ?>
 
