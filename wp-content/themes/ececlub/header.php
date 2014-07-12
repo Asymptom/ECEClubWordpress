@@ -19,49 +19,45 @@
 
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>
-		<div id="University_of_Toronto_Electrical___Computer_Eng" >
-		<p>UofT Electrical & Computer Engineering Club</p>
+<body>
+	<div id="University_of_Toronto_Electrical___Computer_Eng" >
+		<p><?php bloginfo('name'); ?></p>
 	</div>
 	<!-- Notice the tag below isn't closed it sould be closed in your main content -->
 	<div id="wrap">
 		<nav id="blue-bar" class="navbar navbar-inverse navbar-static-top" role="navigation">
-			<a id="header-logo"  class="navbar-brand" href="<?php echo home_url();?>">
+			<a id="header-logo"  class="navbar-brand" href="<?php echo site_url();?>">
 				<img id="ece-logo-image" src="<?php echo get_template_directory_uri(); ?>/images/ece_club_logo.png">
 			</a>
 			
-			<div>
-				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 
-						<span class="icon-bar"></span> 
-						<span class="icon-bar"></span> 
-						<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
 					</button>
 				</div>
 
-				<div class="navbar-collapse collapse">
-	<!-- 				==============================================
-					============================================== -->
-					<div class="nav navbar-nav">
-					  <ul class="no-js">
-					    <li class="less-padding">
-					      <a href="#" class="clicker">MENU</a>
-					      <ul class="nav navbar-nav">
-								<?php wp_nav_menu( array( 'orderby' => 'menu_order', 'theme_location' => 'secondary', 'menu_class' => 'nav-menu', 'container' => false, 'items_wrap' => '%3$s'  ) ); ?>
-					      </ul>
-					    </li>
-					  </ul>
-					</div>
-			
+			<?php 
+			class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
+			  function start_lvl(&$output, $depth) {
+			    $indent = str_repeat("\t", $depth);
+			    $output .= "\n$indent<ul id=\"dropdown-menu\" class=\"dropdown-menu\">\n";
+			  }
+			}
 
-					<div id="dropdown-menu" class="width-container">
-						<ul class="all-navs">
-							<?php wp_nav_menu( array( 'orderby' => 'menu_order', 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'container' => false, 'items_wrap' => '%3$s'  ) ); ?>
-						</ul>
-					</div>
-				</div>
+			wp_nav_menu( array(
+				'theme_location'	=> 'primary',
+				'menu' 				=> 'main_nav',
+				'container_class'	=> 'navbar-collapse collapse',
+				'menu_class' 		=> 'nav navbar-nav',
+				'items_wrap'      	=> '<ul class="%2$s">%3$s</ul>',
+				'walker' 			=> new Custom_Walker_Nav_Menu()
+
+			)); 
+			?>
 			</div>
 		</nav>
 
