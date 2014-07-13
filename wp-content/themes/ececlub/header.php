@@ -14,8 +14,9 @@
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,600,700,900' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.png">
 
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css" />
+	
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 
 	<?php wp_head(); ?>

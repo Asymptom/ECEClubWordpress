@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+	
+	<div id="big-image">This will be a place for a big slideshow</div>
 
 	<?php while ( have_posts() ) : the_post(); ?>
 		<section class="col-8 col-md-8">

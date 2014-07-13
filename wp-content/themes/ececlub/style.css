@@ -27,7 +27,7 @@ html,body {
 	position: relative;
 	top: 10px;
 	width: inherit;
-	height: 13px;
+	height: 25px;
 	position: relative;
 	margin-left: 0px;
 }
@@ -62,7 +62,6 @@ html,body {
 }
 
 #header-logo {
-	margin-top: -65px;
 	margin-bottom: -225px;
     margin-left: 50px;
 	z-index: 10000;
@@ -70,7 +69,7 @@ html,body {
 }
 
 #ece-logo-image{
-    margin-top: -70px;
+    margin-top: -50px;
 }
 
 #blue-bar {
@@ -310,43 +309,6 @@ root {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Sticky footer styles
 -------------------------------------------------- */
 
@@ -372,7 +334,7 @@ root {
 }
 
 #footer > .container {
-        padding-left: 15px;
+    padding-left: 15px;
 	padding-right: 15px;
 }
 
@@ -381,7 +343,17 @@ root {
     color: #7d7d7d;
 }
 
+.nav{ 
+	margin-left: 100px;
+	height: 75px;
+	padding-top: 14px; 
+}
 
+#big-image{
+	height: 400px;
+	width: 100%;
+	background-color: #000;
+}
 
 
 
