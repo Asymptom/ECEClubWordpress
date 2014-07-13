@@ -20,6 +20,11 @@ html,body {
 	/* The html and body elements cannot have any padding or margin. */
 }
 
+/*=======================================
+================header===================
+=========================================
+*/
+
 #University_of_Toronto_Electrical___Computer_Eng {
 	
 	padding-left: 0px;
@@ -62,6 +67,7 @@ html,body {
 }
 
 #header-logo {
+	
 	margin-bottom: -225px;
     margin-left: 50px;
 	z-index: 10000;
@@ -148,16 +154,12 @@ html,body {
 
 
 
-
-
-
-/* 
-    Document   : home
-    Created on : Nov 1, 2013, 8:35:01 PM
-    Author     : AlmoNd14
-    Description:
-        Purpose of the stylesheet follows.
+/*=======================================
+==============main content===============
+=========================================
 */
+
+
 
 #bannerHome{
     padding: 0px 0px 20px 0px;
@@ -195,7 +197,7 @@ html,body {
 
 #discussion-sticker{
     position:absolute;
-    right: 150px;
+    left: 80px;
     top: -100px;
     z-index: 10;
 }
@@ -253,6 +255,7 @@ img.grayscale {
     background-color: #36547d;
     position: relative;
     padding-bottom: 10px;
+    width: 100%;
 }
 
 #billboard:before{
@@ -293,6 +296,15 @@ img.grayscale {
     background-color: #ffffff;
 }
 
+#billboard tbody tr td a{
+    color: #428bca;
+}
+
+#billboard tbody tr td a:visited,
+#billboard tbody tr td a:hover{
+    color: #428bca;
+}
+
 .shadowed {
     -webkit-filter: drop-shadow(7px 7px 5px rgba(0,0,0,0.5));
     filter: url(#drop-shadow);
@@ -306,8 +318,10 @@ root {
 
 
 
-
-
+/*=======================================
+===========footer========================
+=========================================
+*/
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -334,7 +348,7 @@ root {
 }
 
 #footer > .container {
-    padding-left: 15px;
+        padding-left: 15px;
 	padding-right: 15px;
 }
 
@@ -343,22 +357,58 @@ root {
     color: #7d7d7d;
 }
 
-.nav{ 
-	margin-left: 100px;
-	height: 75px;
-	padding-top: 14px; 
+
+
+
+
+/*=======================================
+===========addition style================
+=========================================
+*/
+
+.nav{
+    margin-left: 100px;
+    height: 75px;
+    padding-top: 14px;
 }
 
 #big-image{
-	height: 400px;
-	width: 100%;
-	background-color: #000;
+    height: 400px;
+    width: 100%;
+    background-color: #000;
 }
 
 
+#main-container{
+    width: 1100px;
+    height: 1000px;
+    margin: 0 auto;
+    /*background-color: #efefef;*/
+    padding-top: 30px;
+}
 
+#content-post{
+    width:65%;
+    height:400px;
+    border:2px solid cyan;
+    float: left;
+}
 
+#sidebar{
+    width:33%;
+    height:auto;
+    border:2px solid cyan;
+    float: right;
+}
 
+/*
+this has been changed
+#discussion-sticker{
+    position:absolute;
+    left: 80px;
+    top: -100px;
+    z-index: 10;
+}*/
 
 
 

@@ -16,7 +16,6 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css" />
-	
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 
 	<?php wp_head(); ?>
