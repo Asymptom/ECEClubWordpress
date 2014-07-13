@@ -16,6 +16,7 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/bootstrap.min.css" />
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
 
 	<?php wp_head(); ?>
 </head>
@@ -23,11 +24,11 @@
 	<div id="University_of_Toronto_Electrical___Computer_Eng" >
 		<p><?php bloginfo('name'); ?></p>
 	</div>
-	<!-- Notice the tag below isn't closed it sould be closed in your main content -->
+	<!-- Notice the tag below isn't closed it should be closed in your main content to flush footer to the bottom-->
 	<div id="wrap">
 		<nav id="blue-bar" class="navbar navbar-inverse navbar-static-top" role="navigation">
-			<a id="header-logo"  class="navbar-brand" href="<?php echo site_url();?>">
-				<img id="ece-logo-image" src="<?php echo get_template_directory_uri(); ?>/images/ece_club_logo.png">
+			<a id="header-logo" class="navbar-brand" href="<?php echo site_url();?>">
+				<img id="ece-logo-image" src="<?php echo get_template_directory_uri(); ?>/images/ece_club_logo.png" />
 			</a>
 			
 			<div class="container">
@@ -41,13 +42,8 @@
 				</div>
 
 			<?php 
-			class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
-			  function start_lvl(&$output, $depth) {
-			    $indent = str_repeat("\t", $depth);
-			    $output .= "\n$indent<ul id=\"dropdown-menu\" class=\"dropdown-menu\">\n";
-			  }
-			}
 
+			include 'helpers/custom-nav-menu-walker.php';
 			wp_nav_menu( array(
 				'theme_location'	=> 'primary',
 				'menu' 				=> 'main_nav',
@@ -55,9 +51,9 @@
 				'menu_class' 		=> 'nav navbar-nav',
 				'items_wrap'      	=> '<ul class="%2$s">%3$s</ul>',
 				'walker' 			=> new Custom_Walker_Nav_Menu()
-
 			)); 
 			?>
+
 			</div>
 		</nav>
 

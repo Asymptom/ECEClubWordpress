@@ -62,7 +62,8 @@ html,body {
 }
 
 #header-logo {
-	margin-top: -265px;
+	margin-top: -65px;
+	margin-bottom: -225px;
     margin-left: 50px;
 	z-index: 10000;
 

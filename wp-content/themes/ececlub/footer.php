@@ -13,6 +13,8 @@
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="//code.jquery.com/jquery.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -20,16 +22,14 @@
 <script src="<?php echo get_template_directory_uri(); ?>/vendor/jquery.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/vendor/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/vendor/holder.js"></script>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
 
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+
+<?php wp_footer(); ?>
 </body>
 </html>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
-
-	<?php wp_footer(); ?>
-
-</body>
-</html>
+	
