@@ -306,10 +306,12 @@ img.grayscale {
 }
 
 .shadowed {
-    -webkit-filter: drop-shadow(7px 7px 5px rgba(0,0,0,0.5));
+/*   -webkit-filter: drop-shadow(7px 7px 5px rgba(0,0,0,0.5));
     filter: url(#drop-shadow);
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+*/
+
 }
 
 root { 
@@ -331,11 +333,11 @@ root {
 #footer {
 	height: 100px;
 	background-color: #eaeaea;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        font-size: 11px;
-        color: #7d7d7d;
-        margin-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 11px;
+    color: #7d7d7d;
+    margin-top: 40px;
 }
 
 /* Custom page CSS
@@ -348,7 +350,7 @@ root {
 }
 
 #footer > .container {
-        padding-left: 15px;
+    padding-left: 15px;
 	padding-right: 15px;
 }
 
@@ -373,7 +375,7 @@ root {
 }
 
 #big-image{
-    height: 400px;
+    height: auto;
     width: 100%;
     background-color: #000;
 }
@@ -381,34 +383,57 @@ root {
 
 #main-container{
     width: 1100px;
-    height: 1000px;
+    height: 1300px;
     margin: 0 auto;
-    /*background-color: #efefef;*/
     padding-top: 30px;
 }
 
 #content-post{
     width:65%;
-    height:400px;
-    border:2px solid cyan;
+    height:auto;
     float: left;
 }
 
 #sidebar{
     width:33%;
     height:auto;
-    border:2px solid cyan;
     float: right;
 }
 
-/*
-this has been changed
-#discussion-sticker{
-    position:absolute;
-    left: 80px;
-    top: -100px;
-    z-index: 10;
-}*/
+.col-md-8{
+    width: 100%;
+     /*margin: 10px 60px 0 60px;*/
+   
 
 
+}
 
+
+.post{
+    width: 100%;
+    border-top:solid 6px #b8bfc9;
+}
+
+.post-content{
+    padding: 0 60px;
+}
+
+.post-content h1{
+    width: 80%;
+    text-align: justify;
+    color: #36547d;
+    font-size: 25px;
+}
+
+#subtitle{
+    background-color: #dadcde;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#subtitle p{
+    color: #858f9e;
+    font-style: italic;
+    text-shadow: 1px 1px #f4f4f5;
+}

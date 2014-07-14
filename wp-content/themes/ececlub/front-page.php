@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-	<div id="big-image">This will be a place for a big slideshow</div>
+	<div id="big-image"> <a href="<?php echo site_url();?>"><img src="<?php echo get_template_directory_uri(); ?>/images/homepage.png"></a>
+                  </div>
 
 	<div id="main-container">
 
@@ -7,8 +8,14 @@
 			<?php while ( have_posts() ) : the_post(); ?>
 				<section class="col-8 col-md-8">
 					<div class="post">
-						<h1><?php the_title(); ?></h1>
-						<?php the_content(); ?>
+                        <div class="post-content">
+                            <h1><?php the_title(); ?></h1>
+                            <?php the_content(); ?>
+                        </div>
+						
+
+                        <div id="subtitle"><p>Submitted by <?php the_author(); ?> on <?php the_date(); ?> </p></div>
+
 					</div>
 				</section>
 
@@ -21,7 +28,6 @@
                     <h2>.Upcoming Events</h2>
                     <table class="table table-striped">
                             <tbody>
-                                
                                 <tr>
                                         <td colspan="2">Monday, January 20</td>
                                 </tr>
@@ -69,13 +75,6 @@
 
 
 	</div>
-	
-
-
-
-
-
-
 
 
 
