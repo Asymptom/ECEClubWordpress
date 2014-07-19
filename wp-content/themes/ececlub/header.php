@@ -27,8 +27,8 @@
 	<!-- Notice the tag below isn't closed it should be closed in your main content to flush footer to the bottom-->
 	<div id="wrap">
 		<nav id="blue-bar" class="navbar navbar-inverse navbar-static-top" role="navigation">
-			<a id="header-logo" class="navbar-brand" href="<?php echo site_url();?>">
-				<img id="ece-logo-image" src="<?php echo get_template_directory_uri(); ?>/images/ece_club_logo.png" />
+			<a id="header-logo" class="navbar-brand hidden-xs hidden-sm" href="<?php echo site_url();?>">
+				<img id="ece-logo-image" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
 			</a>
 			
 			<div class="container">
