@@ -5,6 +5,14 @@ if ( ! function_exists( 'pc_setup' ) ) :
 		// Enable support for Post Thumbnails, and declare two sizes.
 		add_theme_support( 'post-thumbnails' );
 
+
+		$args = array(
+			'width'         => 215,
+			'height'        => 214,
+			'default-image' => get_template_directory_uri() . '/images/ece_club_logo.png',
+			'uploads'       => true,
+		);
+		add_theme_support( 'custom-header', $args );
 		//set_post_thumbnail_size( 672, 372, true );
 		//add_image_size( 'twentyfourteen-full-width', 1038, 576, true );
 		//add_image_size( 'hero-med', 700, 700, false );
@@ -99,5 +107,52 @@ function twentyfourteen_post_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'post_class', 'twentyfourteen_post_classes' );
+
+
+// Register widgetized areas
+function theme_widgets_init() {
+    // Area 1
+    register_sidebar( array (
+        'name'          => 'Primary Widget Area',
+        'id'            => 'primary_widget_area',
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget'  => '</li>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+ 
+    // Area 2
+    register_sidebar( array (
+        'name'          => 'Secondary Widget Area',
+        'id'            => 'secondary_widget_area',
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget'  => '</li>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+} // end theme_widgets_init
+ 
+add_action( 'init', 'theme_widgets_init' );
+
+// Check for static widgets in widget-ready areas
+function is_sidebar_active( $index ){
+    global $wp_registered_sidebars;
+ 
+    $widgetcolums = wp_get_sidebars_widgets();
+ 
+    if ( $widgetcolums[$index] ) return true;
+ 
+    return false;
+} // end is_sidebar_active
+
+function create_upcoming_events_cat () {
+    if (file_exists (ABSPATH.'/wp-admin/includes/taxonomy.php')) {
+        require_once (ABSPATH.'/wp-admin/includes/taxonomy.php'); 
+        if ( ! get_cat_ID( 'Upcoming Events' ) ) {
+            wp_create_category( 'Upcoming Events' );
+        }
+    }
+}
+add_action ( 'after_setup_theme', 'create_upcoming_events_cat' );
 
 ?>
