@@ -6,14 +6,19 @@
 	<div id="main-container">
 
 		<div id="content-post">
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+            if (is_home()){
+                $cat_name = 'Upcoming Events';
+                query_posts('cat=-' . get_cat_ID( $cat_name)); 
+            }
+            
+            while ( have_posts() ) : the_post(); ?>
 				<section class="col-8 col-md-8">
 					<div class="post">
                         <div class="post-content">
                             <h1><?php the_title(); ?></h1>
                             <?php the_content(); ?>
                         </div>
-						
 
                         <div id="subtitle"><p>Submitted by <?php the_author(); ?> on <?php the_date(); ?> </p></div>
 
@@ -21,6 +26,7 @@
 				</section>
 
 			<?php endwhile; ?>
+            <?php wp_reset_query(); ?>
 		</div>
 
 		<div id="sidebar">

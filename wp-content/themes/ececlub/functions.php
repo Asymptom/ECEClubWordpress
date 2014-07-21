@@ -153,6 +153,7 @@ function create_upcoming_events_cat () {
         }
     }
 }
+
 add_action ( 'after_setup_theme', 'create_upcoming_events_cat' );
 
 ?>
