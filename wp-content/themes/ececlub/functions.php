@@ -86,7 +86,95 @@ function new_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+add_action( 'init', 'create_post_type' );
 
+function create_post_type() {
+	register_post_type( 'ece_upcoming_event',
+		array(
+			'labels' => array(
+				'name' => __( 'Upcoming Events' ),
+				'singular_name' => __( 'Upcoming Event' )
+			),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'upcoming_event'),
+		)
+	);
+}
+
+register_taxonomy("Upcoming Events", array("ece_upcoming_event"), array("label" => __( 'Upcoming Events' ), "singular_label" => __( 'Upcoming Event' ), "rewrite" => true));
+
+add_action("admin_init", "admin_init");
+ 
+function admin_init(){
+  add_meta_box("events_meta", "Create Events", "events_meta", "ece_upcoming_event", "normal", "low");
+}
+ 
+function events_meta() {
+	global $post;
+	$custom = get_post_custom($post->ID);
+	$date = $custom["date"][0];
+	$time = $custom["time"][0];
+	$link = $custom["link"][0];
+	?>
+
+	<p><label>Event Date:</label><br />
+	<textarea cols="50" rows="5" name="date"><?php echo $date; ?></textarea></p>
+	<p><label>Event Time</label><br />
+	<textarea cols="50" rows="5" name="time"><?php echo $time; ?></textarea></p>
+	<p><label>Event Link</label><br />
+	<textarea cols="50" rows="5" name="link"><?php echo $link; ?></textarea></p>
+	<?php
+}
+
+add_action('save_post', 'save_event_details');
+
+function save_event_details(){
+  global $post;
+ 
+  update_post_meta($post->ID, "date", $_POST["date"]);
+  update_post_meta($post->ID, "time", $_POST["time"]);
+  update_post_meta($post->ID, "link", $_POST["link"]);
+}
+
+function change_columns( $cols ) {
+  $cols = array(
+  	'cb'       	=> '<input type="checkbox" />',
+    'title' 	=> __( 'Event Title'),
+    'date'     	=> __( 'Date'),
+    'time' 			=> __( 'Time'),
+    'link'     		=> __( 'Link'),
+  );
+  return $cols;
+}
+add_filter( "manage_ece_upcoming_event_posts_columns", "change_columns" );
+
+function custom_columns( $column, $post_id ) {
+  switch ( $column ) {
+    case "date":
+      echo get_post_meta( $post_id, 'date', true);
+      break;
+    case "time":
+      echo get_post_meta( $post_id, 'time', true);
+      break;
+	case "link":
+      $link =  get_post_meta( $post_id, 'host', true);
+      echo '<a href="' . $link . '">' . $link. '</a>';
+      break;
+  }
+}
+add_action( "manage_ece_upcoming_event_posts_custom_column", "custom_columns", 10, 2 );
+
+// Make these columns sortable
+function sortable_columns() {
+  return array(
+    'url'      => 'url',
+    'referrer' => 'referrer',
+    'host'     => 'host'
+  );
+}
+
+add_filter( "manage_edit-ece_upcoming_event_sortable_columns", "sortable_columns" );
 
 /**
  * Extend the default WordPress post classes.
@@ -154,6 +242,6 @@ function create_upcoming_events_cat () {
     }
 }
 
-add_action ( 'after_setup_theme', 'create_upcoming_events_cat' );
+
 
 ?>

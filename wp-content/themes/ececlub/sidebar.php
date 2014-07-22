@@ -1,13 +1,30 @@
 <h2>.Upcoming Events</h2>
 <table class="table table-striped">
         <tbody>
-            <?php
-            $cat_name = 'Upcoming Events';
-            query_posts('cat=' . get_cat_ID( $cat_name)); 
-            ?>
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-               <?php the_content(); ?>
-            <?php endwhile; endif; ?>
+        <?php 
+        // the query
+        $the_query = new WP_Query('category_name=Upcoming Events'); ?>
+
+        <?php if ( $the_query->have_posts() ) : ?>
+
+          <!-- pagination here -->
+
+          <!-- the loop -->
+          <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            <?php title(); ?>
+          <?php endwhile; ?>
+          <!-- end of the loop -->
+
+          <!-- pagination here -->
+
+          <?php wp_reset_postdata(); ?>
+
+        <?php else:  ?>
+            <tr>
+                <td colspan="2"><?php _e( 'Sorry, No Upcoming Events' ); ?></td>
+            </tr>
+        <?php endif; ?>
+
             <tr>
                     <td colspan="2">Monday, January 20</td>
             </tr>
