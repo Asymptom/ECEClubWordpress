@@ -243,6 +243,7 @@ function create_upcoming_events_cat () {
 }
 
 
+//WIDGETS
 function ececlub_widgets_init() {
 
 	register_sidebar( array(
@@ -256,5 +257,7 @@ function ececlub_widgets_init() {
 }
 add_action( 'widgets_init', 'ececlub_widgets_init' );
 
+//enable shortcodes
+add_filter('widget_text', 'do_shortcode');
 
 ?>
