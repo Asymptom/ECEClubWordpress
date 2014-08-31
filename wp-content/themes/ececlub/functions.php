@@ -243,5 +243,18 @@ function create_upcoming_events_cat () {
 }
 
 
+function ececlub_widgets_init() {
+
+	register_sidebar( array(
+		'name' => 'Home Slider',
+		'id' => 'home_banner',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+}
+add_action( 'widgets_init', 'ececlub_widgets_init' );
+
 
 ?>
