@@ -196,28 +196,37 @@ function twentyfourteen_post_classes( $classes ) {
 }
 add_filter( 'post_class', 'twentyfourteen_post_classes' );
 
+function create_upcoming_events_cat () {
+    if (file_exists (ABSPATH.'/wp-admin/includes/taxonomy.php')) {
+        require_once (ABSPATH.'/wp-admin/includes/taxonomy.php'); 
+        if ( ! get_cat_ID( 'Upcoming Events' ) ) {
+            wp_create_category( 'Upcoming Events' );
+        }
+    }
+}
+
+
+//WIDGETS
 
 // Register widgetized areas
 function theme_widgets_init() {
-    // Area 1
-    register_sidebar( array (
-        'name'          => 'Primary Widget Area',
-        'id'            => 'primary_widget_area',
-        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-        'after_widget'  => '</li>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
- 
-    // Area 2
-    register_sidebar( array (
-        'name'          => 'Secondary Widget Area',
-        'id'            => 'secondary_widget_area',
-        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-        'after_widget'  => '</li>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
+    register_sidebar( array(
+		'name' => 'Home Slider',
+		'id' => 'home_banner',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+
+	register_sidebar( array(
+		'name' => 'Home Right Sidebar',
+		'id' => 'home_right_sidebar',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	) );
 } // end theme_widgets_init
  
 add_action( 'init', 'theme_widgets_init' );
@@ -232,30 +241,6 @@ function is_sidebar_active( $index ){
  
     return false;
 } // end is_sidebar_active
-
-function create_upcoming_events_cat () {
-    if (file_exists (ABSPATH.'/wp-admin/includes/taxonomy.php')) {
-        require_once (ABSPATH.'/wp-admin/includes/taxonomy.php'); 
-        if ( ! get_cat_ID( 'Upcoming Events' ) ) {
-            wp_create_category( 'Upcoming Events' );
-        }
-    }
-}
-
-
-//WIDGETS
-function ececlub_widgets_init() {
-
-	register_sidebar( array(
-		'name' => 'Home Slider',
-		'id' => 'home_banner',
-		'before_widget' => '<div>',
-		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
-	) );
-}
-add_action( 'widgets_init', 'ececlub_widgets_init' );
 
 //enable shortcodes
 add_filter('widget_text', 'do_shortcode');
