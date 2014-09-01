@@ -224,8 +224,8 @@ function theme_widgets_init() {
 		'id' => 'home_right_sidebar',
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
 	) );
 } // end theme_widgets_init
  

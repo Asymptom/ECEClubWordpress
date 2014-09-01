@@ -351,5 +351,40 @@ class GCE_Parser {
 
 		return $markup;
 	}
+
+	function get_table() {
+		$time_now = current_time( 'timestamp' );
+
+		$event_days = $this->get_event_days();
+
+		//If event_days is empty, there are no events in the feed(s), so return a message indicating this
+		if( empty( $event_days) )
+			return '<p>' . __( 'There are currently no events to display.', GCE_TEXT_DOMAIN ) . '</p>';
+
+		$today = mktime( 0, 0, 0, date( 'm', $time_now ), date( 'd', $time_now ), date( 'Y', $time_now ) );
+
+		$i = 1;
+
+		$markup = '<tbody>';
+
+		foreach ( $event_days as $key => $event_day ) {
+
+			foreach ( $event_day as $num_in_day => $event ) {
+				//Create the markup for this event
+				$markup .=
+					//If a date title should be displayed, add the date title
+					( (isset( $this->title ) ) ? '<div class="gce-list-title">' . esc_html( $this->title ) . ' ' . date_i18n( $event->get_feed()->get_date_format(), $key ) . '</div>' : '' ) .
+					//Add the event markup
+					$event->get_event_markup( 'list', $num_in_day, $i );
+
+				$i++;
+			}
+		}
+
+		$markup .= '</tbody><tfoot>';
+		$markup .= '</tfoot>';
+
+		return $markup;
+	}
 }
 ?>

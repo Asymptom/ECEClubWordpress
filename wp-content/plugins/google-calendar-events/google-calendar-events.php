@@ -577,6 +577,8 @@ if ( ! class_exists( 'Google_Calendar_Events' ) ) {
 							return gce_print_list( $feed_ids, $title_text, $max_events, $sort_order );
 						case 'list-grouped':
 							return gce_print_list( $feed_ids, $title_text, $max_events, $sort_order, true );
+						case 'table':
+							return gce_print_table( $feed_ids, $title_text, $max_events, $sort_order);
 					}
 				}
 			} else {
@@ -663,6 +665,37 @@ function gce_print_list( $feed_ids, $title_text, $max_events, $sort_order, $grou
 		//If current user is an admin, display an error message explaining problem(s). Otherwise, display a 'nice' error messsage
 		if ( current_user_can( 'manage_options' ) ) {
 			return $list->error_messages();
+		} else {
+			$options = get_option( GCE_GENERAL_OPTIONS_NAME );
+			return wp_kses_post( $options['error'] );
+		}
+	}
+}
+
+function gce_print_table( $feed_ids, $title_text, $max_events, $sort_order, $grouped = false ) {
+	require_once 'inc/gce-parser.php';
+
+	$ids = explode( '-', $feed_ids );
+
+	//Create new GCE_Parser object, passing array of feed id(s)
+	$table = new GCE_Parser( $ids, $title_text, $max_events, $sort_order );
+
+	$num_errors = $table->get_num_errors();
+
+	//If there are less errors than feeds parsed, at least one feed must have parsed successfully so continue to display the list
+	if ( $num_errors < count( $ids ) ) {
+		$markup = '<table class="table table-striped">' . $table->get_table() . '</table>';
+
+		//If there was at least one error, return the list markup with error messages (for admins only)
+		if ( $num_errors > 0 && current_user_can( 'manage_options' ) )
+			return $table->error_messages() . $markup;
+
+		//Otherwise just return the list markup
+		return $markup;
+	} else {
+		//If current user is an admin, display an error message explaining problem(s). Otherwise, display a 'nice' error messsage
+		if ( current_user_can( 'manage_options' ) ) {
+			return $table->error_messages();
 		} else {
 			$options = get_option( GCE_GENERAL_OPTIONS_NAME );
 			return wp_kses_post( $options['error'] );

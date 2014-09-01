@@ -93,6 +93,11 @@ class GCE_Widget extends WP_Widget {
 						gce_widget_content_list( $feed_ids, $title_text, $max_events, $sort_order, true );
 						echo '</div>';
 						break;
+					case 'table':
+						echo '<div class="gce-widget-table" id="' . $args['widget_id'] . '-container">';
+						gce_widget_content_table( $feed_ids, $title_text, $max_events, $sort_order, true );
+						echo '</div>';
+						break;
 				}
 			}
 		} else {
@@ -152,6 +157,7 @@ class GCE_Widget extends WP_Widget {
 					<option value="ajax"<?php selected( $display_type, 'ajax' ); ?>><?php _e( 'Calendar Grid - with AJAX', GCE_TEXT_DOMAIN ); ?></option>
 					<option value="list"<?php selected( $display_type, 'list' ); ?>><?php _e( 'List', GCE_TEXT_DOMAIN ); ?></option>
 					<option value="list-grouped"<?php selected( $display_type, 'list-grouped' );?>><?php _e( 'List - grouped by date', GCE_TEXT_DOMAIN ); ?></option>
+					<option value="table"<?php selected( $display_type, 'table' );?>><?php _e( 'Table', GCE_TEXT_DOMAIN ); ?></option>
 				</select>
 			</p><p>
 				<label for="<?php echo $this->get_field_id( 'max_events' ); ?>"><?php _e( 'Maximum no. events to display. Enter 0 to show all retrieved.' ); ?></label>
@@ -233,6 +239,34 @@ function gce_widget_content_list( $feed_ids, $title_text, $max_events, $sort_ord
 		//If current user is an admin, display an error message explaining problem(s). Otherwise, display a 'nice' error messsage
 		if ( current_user_can( 'manage_options' ) ) {
 			echo $list->error_messages();
+		} else {
+			$options = get_option( GCE_GENERAL_OPTIONS_NAME );
+			echo $options['error'];
+		}
+	}
+}
+
+function gce_widget_content_table( $feed_ids, $title_text, $max_events, $sort_order, $grouped = false ) {
+	require_once WP_PLUGIN_DIR . '/' . GCE_PLUGIN_NAME . '/inc/gce-parser.php';
+
+	$ids = explode( '-', $feed_ids );
+
+	//Create new GCE_Parser object, passing array of feed id(s)
+	$table = new GCE_Parser( $ids, $title_text, $max_events, $sort_order );
+
+	$num_errors = $table->get_num_errors();
+
+	//If there are less errors than feeds parsed, at least one feed must have parsed successfully so continue to display the list
+	if ( $num_errors < count( $ids ) ) {
+		//If there was at least one error, and user is an admin, output error messages
+		if ( $num_errors > 0 && current_user_can( 'manage_options' ) )
+			echo $table->error_messages();
+
+		echo '<table class="table table-striped">' . $table->get_table() . '</table>';
+	} else {
+		//If current user is an admin, display an error message explaining problem(s). Otherwise, display a 'nice' error messsage
+		if ( current_user_can( 'manage_options' ) ) {
+			echo $table->error_messages();
 		} else {
 			$options = get_option( GCE_GENERAL_OPTIONS_NAME );
 			echo $options['error'];
