@@ -9,10 +9,10 @@ Tags: responsive, purple, slideshows
 */
 
 @font-face {
-	font-family: 'header-font'; /*a name to be used later*/
+	font-family: Bebas; /*a name to be used later*/
 	/*src: url('Antonio-Regular.ttf'); /*URL to font*/
 	/*src: url('BPdotsCondensed.ttf'); /*URL to font*/
-	src: url('Aller_Rg.ttf'); /*URL to font*/
+	src: url('font/BebasNeue.otf'); /*URL to font*/
 }
 
 html,body {
@@ -92,9 +92,9 @@ html,body {
 
 #blue-bar a {
 	color: white;
-	font-size: 124%;
-	font-weight: bold;
-	font-family: 'header-font';
+    font-size: 22px;
+	font-family: 'Bebas';
+    letter-spacing: 2px;
 	position: relative;
 	padding-left: 20px;
 }
@@ -113,9 +113,8 @@ html,body {
 
 #dropdown-menu a {
 	color: #526c8f;
-	font-size: 124%;
-	font-family: "Times New Roman";
-	font-weight: bold;
+	font-size: 20px;
+	font-family: 'Bebas';
 }
 
 #float-header {
@@ -240,8 +239,8 @@ img.grayscale {
     content: '';
     position: absolute;
     top: 0; right: 0;
-    border-top: 80px solid white;
-    border-left: 80px solid #36547d;
+    border-top: 55px solid white;
+    border-left: 55px solid #36547d;
     width: 0;
 }
 
@@ -254,6 +253,7 @@ img.grayscale {
     padding-bottom: 10px; 
     color: #ffffff;
     text-shadow: -2px 0 4px #19273a;
+    font-family: 'Bebas';
 }
 
 #billboard table{
@@ -358,16 +358,20 @@ root {
     padding-top: 14px;
 }
 
-#big-image{
+#banner-image-container{
     height: auto;
     width: 100%;
     background-color: #000;
     overflow: hidden;
 }
 
+#banner-image{
+    width: 100%;
+    height: auto;
+}
 
 #main-container{
-    width: auto;
+    width: 70%;
     height: auto;
     margin: 0 auto;
     padding-top: 30px;
@@ -404,6 +408,7 @@ root {
 }
 
 .post-content h1{
+    font-family: 'Bebas';
     width: 80%;
     text-align: justify;
     color: #36547d;
