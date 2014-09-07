@@ -37,7 +37,7 @@
 
 		<div id="sidebar">
             <aside class="col-4 col-md-4 " id="billboard">
-                <a href="<?php echo site_url();?>"><img class="shadowed hidden-sm hidden-xs" id="discussion-sticker" src="<?php echo get_template_directory_uri(); ?>/images/discussion_board_sticker.png" alt="to the discussion board"></a>
+                <a href="https://www.facebook.com/ece.club.7"><img class="shadowed hidden-sm hidden-xs" id="discussion-sticker" src="<?php echo get_template_directory_uri(); ?>/images/discussion_board_sticker.png" alt="to the discussion board"></a>
                 <?php get_sidebar(); ?> 
             </aside>
 		</div>

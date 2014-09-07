@@ -105,7 +105,8 @@
 /* Large devices (medium desktops, 767px and up) */
 @media (max-width: 767px) {
   .navbar .container {
-    padding-left: 210px;
+    margin-left: 10px;
+    padding-left: 0px;
     font-family: BebasNeue;
     font-size: 18px;
   }

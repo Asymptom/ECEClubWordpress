@@ -31,8 +31,10 @@
 		<div class="navbar navbar-inverse navbar-static-top" role="navigation">
 			<div class="container">
 				<div id="logo-wrapper">
-					<img id="logo" src="<?php echo get_template_directory_uri(); ?>/images/bg_logo.png">
-					<img id="logo-center" src="<?php echo get_template_directory_uri(); ?>/images/logo.png">
+					<a id="header-logo" class="navbar-brand hidden-xs" href="<?php echo site_url();?>">
+						<img id="logo" src="<?php echo get_template_directory_uri(); ?>/images/bg_logo.png">
+						<img id="logo-center" src="<?php echo get_template_directory_uri(); ?>/images/logo.png">
+					</a>
 				</div>
 
 		        <div class="navbar-header">
