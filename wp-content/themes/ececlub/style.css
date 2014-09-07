@@ -9,7 +9,7 @@ Tags: responsive, purple, slideshows
 */
 
 @font-face {
-	font-family: Bebas; /*a name to be used later*/
+	font-family: BebasNeue; /*a name to be used later*/
 	/*src: url('Antonio-Regular.ttf'); /*URL to font*/
 	/*src: url('BPdotsCondensed.ttf'); /*URL to font*/
 	src: url('font/BebasNeue.otf'); /*URL to font*/
@@ -24,29 +24,6 @@ html,body {
 ================header===================
 =========================================
 */
-
-#University_of_Toronto_Electrical___Computer_Eng {
-	
-	padding-left: 0px;
-	margin-left: 10px;
-	position: relative;
-	top: 10px;
-	width: inherit;
-	height: 25px;
-	position: relative;
-	margin-left: 0px;
-}
-
-#University_of_Toronto_Electrical___Computer_Eng >p{
-    font-size: 14px;
-    font-family: "Cambria";
-    color: rgb(22, 41, 81);
-    font-weight: bold;
-    font-style: italic;
-    line-height: 1;
-    text-align: left;
-    margin-left: 220px;
-}
 
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -67,7 +44,6 @@ html,body {
 }
 
 #header-logo {
-	
 	margin-bottom: -225px;
     margin-left: 50px;
 	z-index: 10000;
@@ -93,7 +69,7 @@ html,body {
 #blue-bar a {
 	color: white;
     font-size: 22px;
-	font-family: 'Bebas';
+	font-family: 'BebasNeue';
     letter-spacing: 2px;
 	position: relative;
 	padding-left: 20px;
@@ -114,7 +90,7 @@ html,body {
 #dropdown-menu a {
 	color: #526c8f;
 	font-size: 20px;
-	font-family: 'Bebas';
+	font-family: 'BebasNeue';
 }
 
 #float-header {
@@ -253,7 +229,7 @@ img.grayscale {
     padding-bottom: 10px; 
     color: #ffffff;
     text-shadow: -2px 0 4px #19273a;
-    font-family: 'Bebas';
+    font-family: 'BebasNeue';
 }
 
 #billboard table{
@@ -408,7 +384,7 @@ root {
 }
 
 .post-content h1{
-    font-family: 'Bebas';
+    font-family: 'BebasNeue';
     width: 80%;
     text-align: justify;
     color: #36547d;
@@ -433,11 +409,8 @@ root {
     text-shadow: 1px 1px #f4f4f5;
 }
 
-.page-container{
-    padding-top: 30px;
-    background-color: #e3e3e3;
-    margin-bottom: 20px;
-    padding: 0px;
+.page-container h1{
+    text-align:center;
 }
 
 .horizontal-rule{
@@ -492,7 +465,7 @@ root {
     .container {
         margin-left: 10px;
     }
-    #University_of_Toronto_Electrical___Computer_Eng {
+    #site-title {
         margin-left: 10px;
         margin-bottom: -55px;
         z-index: 999;

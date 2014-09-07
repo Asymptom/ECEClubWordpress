@@ -1,0 +1,142 @@
+@font-face {
+    font-family: BebasNeue;
+    src: url(font/BebasNeue.otf);
+}
+
+
+.starter-template {
+  padding: 100px 15px;
+  text-align: center;
+}
+
+.navbar {
+  margin-top:37px;
+  padding-top: 20px;
+  margin-bottom: 0px;
+  /*height: 200px;*/
+  background: -webkit-linear-gradient(top, rgba(17,32,67,1), rgba(22,41,81,1)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(top, rgba(17,32,67,1), rgba(22,41,81,1)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(top, rgba(17,32,67,1), rgba(22,41,81,1)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgba(17,32,67,1), rgba(22,41,81,1)); /* Standard syntax (must be last) */
+}
+
+.navbar .container {
+  padding-left: 280px;
+  font-family: BebasNeue;
+  font-size: 18px;
+}
+
+#logo-wrapper {
+  position:relative;
+}
+
+#logo {
+  position:absolute;
+  height:235px;
+  width:254px; 
+  top:-58px;
+  left:-280px;
+}
+
+#logo-center {
+  position:absolute;
+  height:215px;
+  width:215px; 
+  top:-58px;
+  left:-260px;
+}
+
+.need-border {
+  /*padding-top: 0px;
+  border-right: solid white 3px;*/
+}
+
+#site-title >p{
+    font-size: 14px;
+    font-family: "Cambria";
+    color: rgb(22, 41, 81);
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1;
+    text-align: left;
+}
+
+#site-title {
+  margin-left: 320px;
+  top: 20px;
+  height: 25px;
+  position: absolute;
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+  .navbar .container {
+    padding-left: 210px;
+    font-family: BebasNeue;
+    font-size: 18px;
+  }
+
+  #logo {
+    display: none;
+    position:absolute;
+    height:235px;
+    width:254px; 
+    top:-58px;
+    left:-190px;
+  }
+
+  #logo-center {
+    position:absolute;
+    height:150px;
+    width:150px; 
+    top:-58px;
+    left:-170px;
+  }
+
+  #site-title {
+    margin-left: 320px;
+    top: 20px;
+    height: 25px;
+    position: absolute;
+  }
+} 
+
+
+/* Large devices (medium desktops, 767px and up) */
+@media (max-width: 767px) {
+  .navbar .container {
+    padding-left: 210px;
+    font-family: BebasNeue;
+    font-size: 18px;
+  }
+
+  #logo {
+    display: none;
+    position:absolute;
+    height:235px;
+    width:254px; 
+    top:-58px;
+    left:-190px;
+  }
+
+  #logo-center {
+    position:absolute;
+    height:150px;
+    width:150px; 
+    top:-58px;
+    left:-170px;
+  }
+
+  #site-title {
+    margin-left:0px;
+    right: 0px;
+    top: 20px;
+    height: 25px;
+    position: absolute;
+  }
+
+  #site-title >p{
+    margin-left:0px;
+    text-align: right;
+  }
+}

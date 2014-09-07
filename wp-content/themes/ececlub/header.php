@@ -16,44 +16,47 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/header-style.css" />
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 
 	<?php wp_head(); ?>
 </head>
 <body>
-	<div id="University_of_Toronto_Electrical___Computer_Eng" >
-		<p><?php bloginfo('name'); ?></p>
-	</div>
+
 	<!-- Notice the tag below isn't closed it should be closed in your main content to flush footer to the bottom-->
 	<div id="wrap">
-		<nav id="blue-bar" class="navbar navbar-inverse navbar-static-top" role="navigation">
-			<a id="header-logo" class="navbar-brand hidden-xs" href="<?php echo site_url();?>">
-				<img id="ece-logo-image" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-			</a>
-			
+		<div id="site-title" >
+			<p><?php bloginfo('name'); ?></p>
+		</div>
+		<div class="navbar navbar-inverse navbar-static-top" role="navigation">
 			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span>
-					</button>
+				<div id="logo-wrapper">
+					<img id="logo" src="<?php echo get_template_directory_uri(); ?>/images/bg_logo.png">
+					<img id="logo-center" src="<?php echo get_template_directory_uri(); ?>/images/logo.png">
 				</div>
 
-			<?php 
+		        <div class="navbar-header">
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+		          <!-- <a class="navbar-brand" href="#">Project name</a> -->
+		        </div>
 
-			include 'helpers/custom-nav-menu-walker.php';
-			wp_nav_menu( array(
-				'theme_location'	=> 'primary',
-				'menu' 				=> 'main_nav',
-				'container_class'	=> 'navbar-collapse collapse',
-				'menu_class' 		=> 'nav navbar-nav',
-				'items_wrap'      	=> '<ul class="%2$s">%3$s</ul>',
-				'walker' 			=> new Custom_Walker_Nav_Menu()
-			)); 
-			?>
+				<?php 
 
+				include 'helpers/custom-nav-menu-walker.php';
+				wp_nav_menu( array(
+					'theme_location'	=> 'primary',
+					'menu' 				=> 'main_nav',
+					'container_class'	=> 'navbar-collapse collapse',
+					'menu_class' 		=> 'nav navbar-nav',
+					'items_wrap'      	=> '<ul class="%2$s">%3$s</ul>',
+					'walker' 			=> new Custom_Walker_Nav_Menu()
+				)); 
+				?>
 			</div>
-		</nav>
 
+		</div>
