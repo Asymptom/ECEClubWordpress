@@ -26,6 +26,12 @@
   font-size: 18px;
 }
 
+.container-head{
+  margin: auto 0;
+  margin-bottom: -2%;
+  padding: 0;
+}
+
 #logo-wrapper {
   position:relative;
 }
@@ -62,10 +68,7 @@
 }
 
 #site-title {
-  margin-left: 320px;
-  top: 20px;
-  height: 25px;
-  position: absolute;
+  margin-left: 28%;
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -94,10 +97,7 @@
   }
 
   #site-title {
-    margin-left: 320px;
-    top: 20px;
-    height: 25px;
-    position: absolute;
+
   }
 } 
 
@@ -129,11 +129,8 @@
   }
 
   #site-title {
-    margin-left:0px;
-    right: 0px;
-    top: 20px;
-    height: 25px;
-    position: absolute;
+    margin-right: 10px;
+    height: 50px;
   }
 
   #site-title >p{

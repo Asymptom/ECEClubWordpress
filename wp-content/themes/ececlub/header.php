@@ -25,7 +25,7 @@
 
 	<!-- Notice the tag below isn't closed it should be closed in your main content to flush footer to the bottom-->
 	<div id="wrap">
-		<div id="site-title" >
+		<div id="site-title" class="container-head">
 			<p><?php bloginfo('name'); ?></p>
 		</div>
 		<div class="navbar navbar-inverse navbar-static-top" role="navigation">
