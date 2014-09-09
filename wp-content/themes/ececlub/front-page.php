@@ -5,7 +5,7 @@
         <?php if ( is_active_sidebar( 'home_banner' ) ) : ?>
             <?php dynamic_sidebar( 'home_banner'); ?>
         <?php else: ?>
-            <a href="<?php echo site_url();?>"><img id="banner-image" src="<?php echo get_template_directory_uri(); ?>/images/homepage.png"></a>
+            <a href="<?php echo site_url();?>"><img id="banner-image" src="<?php echo get_template_directory_uri(); ?>/images/banner.png"></a>
         <?php endif; ?>
     </div>
 

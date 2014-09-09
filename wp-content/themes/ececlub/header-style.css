@@ -71,6 +71,16 @@
   margin-left: 28%;
 }
 
+.navbar-inverse .navbar-nav>li>a{
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+  color: #999;
+}
+
+
+
 /* Large devices (large desktops, 1200px and up) */
 @media (max-width: 1200px) {
   .navbar .container {
@@ -138,3 +148,5 @@
     text-align: right;
   }
 }
+
+
