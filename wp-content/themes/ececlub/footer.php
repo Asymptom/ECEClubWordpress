@@ -23,7 +23,6 @@
 <script src="<?php echo get_template_directory_uri(); ?>/vendor/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/vendor/holder.js"></script>
 
-
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 
 

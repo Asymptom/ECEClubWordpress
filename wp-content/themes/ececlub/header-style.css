@@ -11,7 +11,7 @@
 
 .navbar {
   margin-top:37px;
-  padding-top: 20px;
+  padding-top: 5px;
   margin-bottom: 0px;
   /*height: 200px;*/
   background: -webkit-linear-gradient(top, rgba(17,32,67,1), rgba(22,41,81,1)); /* For Safari 5.1 to 6.0 */
@@ -28,7 +28,7 @@
 
 .container-head{
   margin: auto 0;
-  margin-bottom: -2%;
+  margin-bottom: -25px;
   padding: 0;
 }
 
@@ -40,16 +40,16 @@
   position:absolute;
   height:235px;
   width:254px; 
-  top:-58px;
-  left:-280px;
+  top:-43px;
+  left:-230px;
 }
 
 #logo-center {
   position:absolute;
   height:215px;
   width:215px; 
-  top:-58px;
-  left:-260px;
+  top:-43px;
+  left:-210px;
 }
 
 .need-border {
@@ -84,7 +84,7 @@
 /* Large devices (large desktops, 1200px and up) */
 @media (max-width: 1200px) {
   .navbar .container {
-    padding-left: 210px;
+    padding-left: 160px;
     font-family: BebasNeue;
     font-size: 18px;
   }
@@ -94,16 +94,49 @@
     position:absolute;
     height:235px;
     width:254px; 
-    top:-58px;
-    left:-190px;
+    top:-43px;
+    left:-160px;
   }
 
   #logo-center {
     position:absolute;
     height:150px;
     width:150px; 
-    top:-58px;
-    left:-170px;
+    top:-43px;
+    left:-140px;
+  }
+
+  #site-title {
+
+  }
+} 
+
+
+/* Large devices (semi-large-desktops, 1200px and up) */
+@media (max-width: 1000px) {
+  .navbar .container {
+    padding-left: 0px;
+    padding-right: 0px;
+    font-family: BebasNeue;
+    font-size: 17px;
+  }
+
+  #logo {
+    display: none;
+    position:absolute;
+    height:235px;
+    width:254px; 
+    top:0px;
+    left:-160px;
+  }
+
+  #logo-center {
+    display: none;
+    position:absolute;
+    height:50px;
+    width:50px; 
+    top:0px;
+    left:-140px;
   }
 
   #site-title {
@@ -126,7 +159,7 @@
     position:absolute;
     height:235px;
     width:254px; 
-    top:-58px;
+    top:-43px;
     left:-190px;
   }
 
@@ -134,7 +167,7 @@
     position:absolute;
     height:150px;
     width:150px; 
-    top:-58px;
+    top:-43px;
     left:-170px;
   }
 
